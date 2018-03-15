@@ -221,7 +221,7 @@ public class Main {
 					e.printStackTrace();
 				}
 				String session = System.getenv("DESKTOP_SESSION");
-				String cmd = ("if [ \"$DESKTOP_SESSION\" == \"" + session + "\" ]; then\n    java -jar " + home + "/.local/bin/screenshot/screenshot.jar" + args2 + "\nfi");
+				String cmd = ("if [ \"$DESKTOP_SESSION\" == \"" + session + "\" ]; then\njava -jar " + home + "/.local/bin/screenshot/screenshot.jar &\ndisown" + args2 + "\nfi");
 				File profile = new File(home + "/.profile");
 				try {
 					String current = new String(Files.readAllBytes(profile.toPath()));
